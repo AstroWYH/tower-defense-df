@@ -2,6 +2,26 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## CRITICAL: File Editing on Windows
+
+### ⚠️ MANDATORY: Always Use Backslashes on Windows for File Paths
+
+**When using Edit or MultiEdit tools on Windows, you MUST use backslashes (`\`) in file paths, NOT forward slashes (`/`).**
+
+#### ❌ WRONG - Will cause errors:
+```
+Edit(file_path: "D:/repos/project/file.tsx", ...)
+MultiEdit(file_path: "D:/repos/project/file.tsx", ...)
+```
+
+#### ✅ CORRECT - Always works:
+```
+Edit(file_path: "D:\repos\project\file.tsx", ...)
+MultiEdit(file_path: "D:\repos\project\file.tsx", ...)
+```
+
+**This is critical for VSCode and Rider plugin compatibility on Windows systems.**
+
 ## Project Overview
 
 This is a tower defense game built with Unity 2022.3.17f1c1 and GameFramework 2020.12.31. It's a re-implementation of Unity's Tower Defense Template 1.4 using the GameFramework architecture, demonstrating production-ready patterns including hot update support, data-driven design, and comprehensive resource management.
