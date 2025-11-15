@@ -111,6 +111,9 @@ namespace GameFramework.Procedure
 
             m_FsmManager = fsmManager;
             m_ProcedureFsm = m_FsmManager.CreateFsm(this, procedures);
+
+            // TEST LOG: Procedure FSM created
+            GameFrameworkLog.Info("[TEST] ProcedureManager.Initialize - Procedure FSM created with {0} procedures", procedures.Length);
         }
 
         /// <summary>
@@ -137,6 +140,9 @@ namespace GameFramework.Procedure
             {
                 throw new GameFrameworkException("You must initialize procedure first.");
             }
+
+            // TEST LOG: Starting procedure
+            GameFrameworkLog.Info("[TEST] ProcedureManager.StartProcedure - Starting procedure: {0}", procedureType.Name);
 
             m_ProcedureFsm.Start(procedureType);
         }
