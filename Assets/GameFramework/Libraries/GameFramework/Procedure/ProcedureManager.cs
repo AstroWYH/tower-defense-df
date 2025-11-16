@@ -78,6 +78,7 @@ namespace GameFramework.Procedure
         /// <param name="realElapseSeconds">真实流逝时间，以秒为单位。</param>
         internal override void Update(float elapseSeconds, float realElapseSeconds)
         {
+            GameFrameworkLog.Info("[TEST] ProcedureManager.Update - elapseSeconds: {0}, realElapseSeconds: {1}", elapseSeconds, realElapseSeconds);
         }
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace GameFramework.Procedure
         /// </summary>
         internal override void Shutdown()
         {
+            GameFrameworkLog.Info("[TEST] ProcedureManager.Shutdown");
             if (m_FsmManager != null)
             {
                 if (m_ProcedureFsm != null)
